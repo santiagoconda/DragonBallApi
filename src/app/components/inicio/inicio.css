@@ -1,0 +1,35 @@
+.container-father {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(to top, #fcbad3, #fff4b1, #a2d2ff);
+  overflow: hidden;
+  position: relative;
+  font-family: sans-serif;
+  
+}
+.img_GokuAndGohan{
+  width: 20%;
+  height:20%;
+  object-fit: contain;
+}
+.container-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tituloDragonBallz{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.img_tituloDragonBall{
+  width: 60%;
+  height:60%;
+  object-fit: contain;
+
+}
+.Active{
+  color: greenyellow;
+}
