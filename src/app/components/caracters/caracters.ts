@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Character, CharactersResponse } from './Character.models';
 import { Console } from 'node:console';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { Console } from 'node:console';
 })
 export class Caracters implements OnInit {
   personajes: Character[] = [];
+  errorMessage: string | null = null;
   saludo = "holaa";
   constructor(private ApiService: Api) { }
   ngOnInit(): void {
@@ -28,7 +30,11 @@ export class Caracters implements OnInit {
         this.personajes = response.items;
         console.log(this.personajes);
       },
-    });
-  };
-
+    error: (err) => {
+      console.error('Error al obtener personajes:', err);
+      this.errorMessage = '⚠️ No se pudo conectar con el servidor de AWS API. Intenta más tarde.';
+      this.personajes = [];
+    }
+  });
+}
 }

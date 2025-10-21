@@ -1,9 +1,12 @@
 
-
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+  hola
+</div>
 <div class="container-father">
     <p>Personajes Dragon Ball Z</p>
     <h2>Caracters </h2>
-    <div class="card-container">
+    <div class="card-container" *ngIf="!errorMessage">
         @for (item of personajes; track item) {
             <div class="card">
                 <img [src]="item.image" alt="{{item.name}}">
